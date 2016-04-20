@@ -1,0 +1,36 @@
+<apex:page id="signin-page"
+	docType="html-5.0" 
+	standardStylesheets="false" 
+	applyBodyTag="false" 
+	applyHtmlTag="false" 
+	showHeader="false" 
+	sidebar="false"
+	controller="DfsSignInController">
+<html>
+	<head>
+		<title>Sign In | Dell Financial Services</title>
+	</head>
+	<body>
+		<h1>Sign In</h1>
+		<apex:form id="signin-form">
+			<div>
+				<apex:inputText id="username" value="{!username}" html-placeholder="Email" />
+			</div>
+			<br />
+			<div>
+				<apex:inputsecret id="password" value="{!password}" html-placeholder="Password" />
+			</div>
+			<br />
+			<div>
+				<apex:commandButton id="signin-button" action="{!login}" value="Sign In"/>
+				<div>
+					<label>
+						<input id="remember-checkbox" type="checkbox"/>
+						Remember
+					</label>
+				</div>
+			</div>
+		</apex:form>
+	</body>
+</html>
+</apex:page>

@@ -1,0 +1,7 @@
+--require ./test/chai.js
+--reporter spec
+--recursive
+--ui bdd
+--timeout 8000
+--slow 200
+--colors

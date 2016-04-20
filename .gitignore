@@ -1,0 +1,12 @@
+.settings
+Referenced*
+resource-bundles*
+node_modules
+config
+
+*.project
+*.resource
+*.resource-meta.xml
+*.sublime-workspace
+*.sublime-project
+*.sublime-settings

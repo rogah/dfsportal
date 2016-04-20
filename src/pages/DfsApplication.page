@@ -1,0 +1,65 @@
+<apex:page docType="html-5.0" 
+	standardStylesheets="false" 
+	applyBodyTag="false" 
+	applyHtmlTag="false" 
+	showHeader="false" 
+	sidebar="false"
+	controller="DfsApplicationController">
+<html lang="en" ng-app="dfs">
+<head>
+	<title>Dell Financial Services</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.7/angular-material.min.css"></link>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+	<link rel="stylesheet" href="{!URLFOR($Resource.DellFinancialServices, '/styles/app.min.css')}"></link>
+</head>
+<body ng-cloak="true" layout="column">
+
+    <div flex="true" layout="row">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+			<md-toolbar>
+				<span flex="true"></span>
+				<h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+					<span class="md-flex">Toolbar</span>
+					<a id="signout" href="{!$Site.Prefix}/secur/logout.jsp" class="md-flex">Sign Out</a>
+				</h2>
+			</md-toolbar>
+        </md-sidenav>
+
+        <md-content flex="true" id="content">
+			<md-toolbar>
+				<span flex="true"></span>
+				<h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+					<span class="md-flex">Toolbar: tall with actions pin to the bottom (md-warn md-hue-3)</span>
+				</h2>
+			</md-toolbar>
+			<md-content layout-padding="true">
+				{!$User.Username}
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet placerat augue ut porttitor. Suspendisse pellentesque scelerisque odio, non euismod mi consequat et. Integer magna orci, semper a tincidunt fermentum, varius sed libero. In et ultrices leo. Cras rhoncus, mauris ut posuere vehicula, libero mauris commodo augue, et ullamcorper lorem erat quis elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas volutpat libero sit amet dignissim porttitor. Praesent quis nulla sollicitudin, vestibulum felis ac, consequat nisi. Sed sit amet auctor eros. Proin dapibus quam lorem, at congue nisl ultricies id. Maecenas id dui interdum, cursus eros at, pretium ligula. Curabitur at purus eros. Morbi lacinia elit et tortor convallis imperdiet. Nam aliquam pretium diam eget gravida.</p>
+			</md-content>
+        </md-content>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.7/angular-material.min.js"></script>
+
+	<script src="{!URLFOR($Resource.DellFinancialServices, '/app.min.js')}"></script>
+	
+	<script type="text/javascript">
+		(function (angular) {
+			angular.module('dfs')
+				.constant('dfsConfig', {
+					sitePrefix: '{!$Site.prefix}' || '/apex',
+					resource: "{!URLFOR($Resource.DellFinancialServices)}"
+				});
+		})(angular);
+	</script>
+</body>
+</html>
+</apex:page>
