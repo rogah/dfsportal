@@ -43,6 +43,32 @@
 	font-style: normal	
 }
 
+@font-face {
+    font-family: 'dell-financial-services';
+    src:
+        url('../fonts/dell-financial-services.ttf?dafb48') format('truetype'),
+        url('../fonts/dell-financial-services.woff?dafb48') format('woff'),
+        url('../fonts/dell-financial-services.svg?dafb48#dell-financial-services') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="dfs-icon-"], [class*=" dfs-icon-"] {
+    font-family: 'dell-financial-services' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dfs-icon-dell:before {
+    content: "\e900";
+}
+
 body {
 	font-family: 'museo-sans-for-dell-100', 'Trebuchet MS', 'Roboto';
 }

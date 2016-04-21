@@ -20,24 +20,61 @@
 <body ng-cloak="true" layout="column">
 
     <div flex="true" layout="row">
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
-			<md-toolbar>
-				<span flex="true"></span>
-				<h2 class="md-toolbar-tools md-toolbar-tools-bottom">
-					<span class="md-flex">Toolbar</span>
-					<a id="signout" href="{!$Site.Prefix}/secur/logout.jsp" class="md-flex">Sign Out</a>
-				</h2>
+        <md-sidenav id="dfs-sidebar" md-component-id="dfs-sidebar" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+			<md-toolbar flex="true">
+				<div class="md-toolbar-tools dfs-sidebar-header">
+					<h1 layout="row" layout-align="center center">
+						<span class="dfs-icon-dell"></span>
+						Financial Services
+					</h1>
+				</div>
+				<div layout-padding="true" class="dfs-sidebar-userinfo">
+					<div layout="column">
+						<h2 class="md-title dfs-username">Patrick Hanks</h2>
+						<span class="md-caption">patrick_hanks@dell.com</span>
+					</div>
+				</div>
+				<div class="dfs-sidebar-nav">
+					<md-list flex="true" role="list">
+						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+							<i class="material-icons">account_circle</i>
+							My Profile
+						</md-list-item>
+						<md-list-item class="md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
+							<i class="material-icons">style</i>
+							Accounts
+						</md-list-item>
+						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+							<i class="material-icons">lock</i>
+							Security
+						</md-list-item>
+						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+							<i class="material-icons">restore</i>
+							Alerts
+						</md-list-item>
+						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+							<i class="material-icons">settings</i>
+							Settings
+						</md-list-item>
+						<md-list-item id="signout" class="md-1-line" md-ink-ripple="true" ng-href="{!$Site.Prefix}/secur/logout.jsp">
+							<i class="material-icons">exit_to_app</i>
+							Sign Out
+						</md-list-item>
+					</md-list>
+				</div>
 			</md-toolbar>
         </md-sidenav>
 
-        <md-content flex="true" id="content">
-			<md-toolbar>
-				<span flex="true"></span>
-				<h2 class="md-toolbar-tools md-toolbar-tools-bottom">
-					<span class="md-flex">Toolbar: tall with actions pin to the bottom (md-warn md-hue-3)</span>
-				</h2>
+        <md-content flex="true" layout="column" id="dfs-container">
+			<md-toolbar id="dfs-toolbar" class="md-hue-1 md-whiteframe-1dp">
+				<div class="md-toolbar-tools md-toolbar-tools-bottom">
+					<md-button id="menu-toggle" class="md-icon-button md-primary" hide-gt-sm="true">
+						<i class="material-icons">menu</i>
+					</md-button>
+					<h3>Accounts</h3>
+				</div>
 			</md-toolbar>
-			<md-content layout-padding="true">
+			<md-content id="dfs-content" flex="true" layout-padding="true" class="md-hue-1">
 				{!$User.Username}
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet placerat augue ut porttitor. Suspendisse pellentesque scelerisque odio, non euismod mi consequat et. Integer magna orci, semper a tincidunt fermentum, varius sed libero. In et ultrices leo. Cras rhoncus, mauris ut posuere vehicula, libero mauris commodo augue, et ullamcorper lorem erat quis elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas volutpat libero sit amet dignissim porttitor. Praesent quis nulla sollicitudin, vestibulum felis ac, consequat nisi. Sed sit amet auctor eros. Proin dapibus quam lorem, at congue nisl ultricies id. Maecenas id dui interdum, cursus eros at, pretium ligula. Curabitur at purus eros. Morbi lacinia elit et tortor convallis imperdiet. Nam aliquam pretium diam eget gravida.</p>
 			</md-content>

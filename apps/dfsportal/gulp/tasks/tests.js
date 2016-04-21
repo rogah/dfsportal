@@ -13,7 +13,7 @@ const paths = require('../paths');
  * @return {Stream}
  */
 gulp.task('test', () => {
-	return gulp.src(paths.test.unit, {read: false})
+	return gulp.src(paths.test.unit, { read: false })
 		.pipe(mocha({
 			require: ['./test/chai.js']
 		}));
@@ -24,7 +24,7 @@ gulp.task('webdriver:update', false, protractor.webdriver_update);
 gulp.task('webdriver:start', ['webdriver:update'], protractor.webdriver_standalone);
 
 gulp.task('e2e', () => {
-	return gulp.src(paths.test.basePath, {read: false})
+	return gulp.src(paths.test.basePath, { read: false })
 		.pipe(protractor.protractor({ configFile: './protractor-config.js' }))
 		.on('error', (e) => {
 			gutil.log(e);
