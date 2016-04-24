@@ -1,0 +1,89 @@
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 72px !important;
+  width: 250px !important;
+  max-width: 250px !important;
+}
+
+md-sidenav.dfs-sidebar-sm,
+md-sidenav.md-locked-open.dfs-sidebar-sm,
+md-sidenav.md-closed.md-locked-open-add-active.dfs-sidebar-sm {
+  min-width: 72px !important;
+  width: 72px !important;
+  max-width: 72px !important;
+  md-list-item,
+  md-list-item .md-list-item-inner {
+    justify-content: center !important;
+  }
+  .md-button {
+    min-width: 72px;
+  }
+}
+
+a.md-button.md-dell-branding-theme:not([disabled]):hover,
+.md-button.md-dell-branding-theme:not([disabled]):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#dfs-left-sidebar {
+  color: #ffffff;
+  .sidebar-gt-sm {
+    @include no-wrap;
+    display: flex;
+  }
+  .sidebar-sm {
+    display: none;
+  }
+  &.dfs-sidebar-sm {
+    h1 {
+      overflow: hidden;
+    }
+    .sidebar-gt-sm {
+      display: none;
+    }
+    .sidebar-sm {
+      display: block;
+    }
+  }
+  md-toolbar {
+    font-size: inherit;
+  }
+  h1 {
+    @include no-wrap;
+    position: relative;
+    font-size: 1rem;
+    line-height: 2.6rem;
+    padding-left: 3rem;
+    .dfs-icon-dell {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 2.6rem;
+    }
+  }
+  h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .dfs-sidebar-header {
+    @extend .dfs-soft-light-bottom;
+  }
+  .dfs-userinitials {
+    text-align: center;
+  }
+  .dfs-sidebar-nav {
+    @extend .dfs-soft-light-top;
+    md-list-item {
+      font-size: inherit;
+      span {
+        margin-left: .5rem;
+      }
+      a {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}

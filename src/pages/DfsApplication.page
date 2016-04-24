@@ -10,65 +10,84 @@
 	<title>Dell Financial Services</title>
 
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1" />
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.7/angular-material.min.css"></link>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 	<link rel="stylesheet" href="{!URLFOR($Resource.DellFinancialServices, '/styles/app.min.css')}"></link>
 </head>
-<body ng-cloak="true" layout="column">
-
+<body ng-cloak="true" layout="column" ng-controller="AppController as app">
     <div flex="true" layout="row">
-        <md-sidenav id="dfs-sidebar" md-component-id="dfs-sidebar" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
-			<md-toolbar flex="true">
+        <md-sidenav id="dfs-left-sidebar" 
+        	md-component-id="left-sidebar" 
+        	md-is-locked-open="app.isMedia('gt-xs')" 
+        	ng-class="{'dfs-sidebar-sm': app.isMedia('sm') && app.isSidenavClosed('left-sidebar')}"
+        	class="md-hue-2 md-whiteframe-z2">
+			<md-toolbar>
 				<div class="md-toolbar-tools dfs-sidebar-header">
-					<h1 layout="row" layout-align="center center">
+					<h1 layout="row">
 						<span class="dfs-icon-dell"></span>
 						Financial Services
 					</h1>
 				</div>
-				<div layout-padding="true" class="dfs-sidebar-userinfo">
-					<div layout="column">
-						<h2 class="md-title dfs-username">Patrick Hanks</h2>
-						<span class="md-caption">patrick_hanks@dell.com</span>
-					</div>
-				</div>
-				<div class="dfs-sidebar-nav">
-					<md-list flex="true" role="list">
-						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
-							<i class="material-icons">account_circle</i>
-							My Profile
-						</md-list-item>
-						<md-list-item class="md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
-							<i class="material-icons">style</i>
-							Accounts
-						</md-list-item>
-						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
-							<i class="material-icons">lock</i>
-							Security
-						</md-list-item>
-						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
-							<i class="material-icons">restore</i>
-							Alerts
-						</md-list-item>
-						<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
-							<i class="material-icons">settings</i>
-							Settings
-						</md-list-item>
-						<md-list-item id="signout" class="md-1-line" md-ink-ripple="true" ng-href="{!$Site.Prefix}/secur/logout.jsp">
-							<i class="material-icons">exit_to_app</i>
-							Sign Out
-						</md-list-item>
-					</md-list>
-				</div>
 			</md-toolbar>
+			<div layout-padding="true" class="dfs-sidebar-userinfo">
+				<div layout="column">
+					<h2 class="md-title dfs-userinitials sidebar-sm">PH</h2>
+					<h2 class="md-title sidebar-gt-sm">Patrick Hanks</h2>
+					<span class="md-caption sidebar-gt-sm">patrick_hanks@dell.com</span>
+				</div>
+			</div>
+			<div class="dfs-sidebar-nav">
+				<md-list flex="true" role="list">
+					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+						<i class="material-icons">account_circle</i>
+						<span class="sidebar-gt-sm">
+							My Profile
+						</span>
+					</md-list-item>
+					<md-list-item class="md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
+						<i class="material-icons">style</i>
+						<span class="sidebar-gt-sm">
+							Accounts
+						</span>
+					</md-list-item>
+					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+						<i class="material-icons">lock</i>
+						<span class="sidebar-gt-sm">
+							Security
+						</span>
+					</md-list-item>
+					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+						<i class="material-icons">restore</i>
+						<span class="sidebar-gt-sm">
+							Alerts
+						</span>
+					</md-list-item>
+					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+						<i class="material-icons">settings</i>
+						<span class="sidebar-gt-sm">
+							Settings
+						</span>
+					</md-list-item>
+					<md-list-item id="signout" class="md-1-line" md-ink-ripple="true" ng-href="{!$Site.Prefix}/secur/logout.jsp">
+						<i class="material-icons">exit_to_app</i>
+						<span class="sidebar-gt-sm">
+							Sign Out
+						</span>
+					</md-list-item>
+				</md-list>
+			</div>
         </md-sidenav>
 
         <md-content flex="true" layout="column" id="dfs-container">
 			<md-toolbar id="dfs-toolbar" class="md-hue-1 md-whiteframe-1dp">
 				<div class="md-toolbar-tools md-toolbar-tools-bottom">
-					<md-button id="menu-toggle" class="md-icon-button md-primary" hide-gt-sm="true">
+					<md-button id="menu-toggle" 
+						class="md-icon-button md-primary" 
+						hide-gt-sm="true" 
+						ng-click="app.toggleSidenav('left-sidebar')">
 						<i class="material-icons">menu</i>
 					</md-button>
 					<h3>Accounts</h3>

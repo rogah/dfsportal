@@ -1,4 +1,5 @@
-@import 'angular';
-@import 'typography';
-@import 'layout';
-@import 'sidebar';
+@import 'vendors/angular';
+@import 'base/typography';
+@import 'utils/mixins';
+@import 'utils/helpers';
+@import 'components/sidenav';

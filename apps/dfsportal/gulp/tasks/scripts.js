@@ -23,7 +23,7 @@ const paths = require('../paths');
  *
  * @return {Stream}
  */
-gulp.task('lint', () => {
+gulp.task('js:lint', () => {
 	return gulp.src(paths.app.scripts.concat(paths.gulpfile).concat(paths.test.files))
 		.pipe(eslint())
 		.pipe(eslint.format())
@@ -35,7 +35,7 @@ gulp.task('lint', () => {
  *
  * @return {Stream}
  */
-gulp.task('beautify', () => {
+gulp.task('js:beautify', () => {
 	return gulp.src(paths.app.scripts.concat(paths.gulpfile).concat(paths.test.files), { base: './' })
 		.pipe(jsbeautifier({
 			config: '.jsbeautifyrc',
@@ -50,7 +50,7 @@ gulp.task('beautify', () => {
  *
  * @param {Function} done - callback when complete
  */
-gulp.task('compile:app', (done) => {
+gulp.task('js:compile', (done) => {
 	return browserify({
 			entries: 'app.js',
 			basedir: 'src/',
@@ -79,7 +79,7 @@ gulp.task('compile:app', (done) => {
  */
 gulp.task('scripts', (done) => {
 	runSequence(
-		['lint'], ['beautify'], ['compile:app'],
+		['js:lint'], ['js:beautify'], ['js:compile'],
 		done
 	);
 });

@@ -19,9 +19,9 @@ gulp.task('test', () => {
 		}));
 });
 
-gulp.task('webdriver:update', false, protractor.webdriver_update);
+gulp.task('e2e:update', false, protractor.webdriver_update);
 
-gulp.task('webdriver:start', ['webdriver:update'], protractor.webdriver_standalone);
+gulp.task('e2e:start', ['e2e:update'], protractor.webdriver_standalone);
 
 gulp.task('e2e', () => {
 	return gulp.src(paths.test.basePath, { read: false })

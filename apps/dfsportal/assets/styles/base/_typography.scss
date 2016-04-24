@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'museo-sans-for-dell-100';
+  src: url('../fonts/museosansfordell-100-webfont.eot');
+  src: url('../fonts/museosansfordell-100-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosansfordell-100-webfont.woff') format('woff'), url('../fonts/museosansfordell-100-webfont.ttf') format('truetype'), url('../fonts/museosansfordell-100-webfont.svg#MuseoSansForDell100') format('svg');
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'museo-sans-for-dell-300';
+  src: url('../fonts/museosansfordell-300-webfont.eot');
+  src: url('../fonts/museosansfordell-300-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosansfordell-300-webfont.woff') format('woff'), url('../fonts/museosansfordell-300-webfont.ttf') format('truetype'), url('../fonts/museosansfordell-300-webfont.svg#MuseoSansForDell300') format('svg');
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'museo-sans-for-dell-500';
+  src: url('../fonts/museosansfordell-500-webfont.eot');
+  src: url('../fonts/museosansfordell-500-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosansfordell-500-webfont.woff2') format('woff2'), url('../fonts/museosansfordell-500-webfont.woff') format('woff'), url('../fonts/museosansfordell-500-webfont.ttf') format('truetype'), url('../fonts/museosansfordell-500-webfont.svg#MuseoSansForDell500') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo-sans-for-dell-700';
+  src: url('../fonts/museosansfordell-700-webfont.eot');
+  src: url('../fonts/museosansfordell-700-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosansfordell-700-webfont.woff') format('woff'), url('../fonts/museosansfordell-700-webfont.ttf') format('truetype'), url('../fonts/museosansfordell-700-webfont.svg#MuseoSansForDell700') format('svg');
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'dell-financial-services';
+  src: url('../fonts/dell-financial-services.ttf?dafb48') format('truetype'), url('../fonts/dell-financial-services.woff?dafb48') format('woff'), url('../fonts/dell-financial-services.svg?dafb48#dell-financial-services') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="dfs-icon-"],
+[class*=" dfs-icon-"] {
+  font-family: 'dell-financial-services' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dfs-icon-dell:before {
+  content: "\e900";
+}
+
+body {
+  font-family: 'museo-sans-for-dell-100', 'Trebuchet MS', 'Roboto';
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'museo-sans-for-dell-500', 'Trebuchet MS', 'Roboto';
+}
+
+h4,
+h5,
+h6 {
+  font-family: 'museo-sans-for-dell-300', 'Trebuchet MS', 'Roboto';
+}
