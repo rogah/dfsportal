@@ -2,4 +2,4 @@
 
 const accountsModule = angular.module('dfs.accounts', []);
 
-export default accountsModule;
+module.exports = accountsModule;

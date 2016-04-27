@@ -3,8 +3,9 @@
 class AppController {
 
 	/* @ngInject */
-	constructor(sidenavService) {
+	constructor(sidenavService, mediaService) {
 		this.sidenavService = sidenavService;
+		this.mediaService = mediaService;
 	}
 
 	toggleSidenav(sidenavId) {
@@ -20,8 +21,8 @@ class AppController {
 	}
 
 	isMedia(expression) {
-		return this.sidenavService.isMedia(expression);
+		return this.mediaService.isMedia(expression);
 	}
 }
 
-export default AppController;
+module.exports = AppController;

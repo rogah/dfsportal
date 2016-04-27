@@ -1,10 +1,10 @@
 'use strict';
 
-import coreModule from './core/core-module';
-import themeModule from './theme/theme-module';
-import usersModule from './users/users-module';
-import accountsModule from './accounts/accounts-module';
-import paymentsModule from './payments/payments-module';
+const coreModule = require('./core/core-module');
+const themeModule = require('./theme/theme-module');
+const usersModule = require('./users/users-module');
+const accountsModule = require('./accounts/accounts-module');
+const paymentsModule = require('./payments/payments-module');
 
 const app = angular.module('dfs', [
 	coreModule.name,
@@ -14,4 +14,4 @@ const app = angular.module('dfs', [
 	paymentsModule.name
 ]);
 
-export default app;
+module.exports = app;

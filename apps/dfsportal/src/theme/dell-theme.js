@@ -243,4 +243,4 @@ class DellTheme {
 	}
 }
 
-export default DellTheme;
+module.exports = DellTheme;

@@ -3,10 +3,11 @@ module.exports = function(config) {
 
     basePath: '',
 
-    frameworks: ['browserify', 'jasmine'],
+    frameworks: ['jasmine'],
 
     files: [
       'node_modules/angular/angular.min.js',
+      'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-aria/angular-aria.min.js',
       'node_modules/angular-animate/angular-animate.min.js',
       'node_modules/angular-material/angular-material.min.js',
@@ -19,8 +20,8 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-        'src/**/*.js': ['browserify'],
-        'test/specs/**/*.spec.js': ['browserify']
+        'src/**/*.js': ['babel'],
+        'test/specs/**/*.spec.js': ['babel']
     },
 
     reporters: ['progress'],
@@ -39,9 +40,22 @@ module.exports = function(config) {
 
     concurrency: Infinity,
 
-    browserify: {
-        debug: true,
-        transform: [ 'babelify' ]
+    //browserify: {
+    //    debug: true,
+    //    transform: [ 'babelify' ]
+    //}
+
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015'],
+        sourceMap: 'inline'
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
     }
   })
 }

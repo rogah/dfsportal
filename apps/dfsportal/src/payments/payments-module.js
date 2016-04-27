@@ -2,4 +2,4 @@
 
 const paymentsModule = angular.module('dfs.payments', []);
 
-export default paymentsModule;
+module.exports = paymentsModule;

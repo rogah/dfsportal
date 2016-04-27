@@ -2,4 +2,4 @@
 
 const usersModule = angular.module('dfs.users', []);
 
-export default usersModule;
+module.exports = usersModule;

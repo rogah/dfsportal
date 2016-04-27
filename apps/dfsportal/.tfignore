@@ -3,5 +3,4 @@
 .tmp\
 dist\
 coverage\
-.nyc_output\
 node_modules\
