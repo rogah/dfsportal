@@ -4,7 +4,9 @@ const gulp = require('gulp');
 const zip = require('gulp-zip');
 const size = require('gulp-size');
 const file = require('gulp-file');
+
 const forceDeploy = require('gulp-jsforce-deploy');
+const runSequence = require('run-sequence');
 
 const path = require('path');
 const nconf = require('nconf');
@@ -41,7 +43,7 @@ gulp.task('package:staticresource', () => {
 		.pipe(size({ title: `Packing ${constants.RESOURCE_NAME}` }));
 });
 
-gulp.task('deploy', ['package:manifest', 'package:staticresource'], () => {
+gulp.task('deploy:metadata', ['package:manifest', 'package:staticresource'], () => {
 	const packageName = 'package.zip';
 
 	return gulp.src(`${paths.tmp.package.basePath}**/*`)
@@ -55,4 +57,11 @@ gulp.task('deploy', ['package:manifest', 'package:staticresource'], () => {
 			pollInterval: nconf.get('sfdc:pollInterval'),
 			version: nconf.get('sfdc:version')
 		}));
+});
+
+gulp.task('deploy', (done) => {
+	runSequence(
+		['build'], ['package:manifest', 'package:staticresource'], ['deploy:metadata'],
+		done
+	);
 });

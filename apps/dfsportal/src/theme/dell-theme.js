@@ -196,21 +196,21 @@ class DellTheme {
 
 		$mdThemingProvider.definePalette('dell-background', {
 			'50': '#ffffff',
-			'100': '#f9f9f9',
-			'200': '#aaaaaa',
-			'300': '#8b8b8b',
+			'100': '#f7f7f7',
+			'200': '#c9c9c9',
+			'300': '#636363',
 			'400': '#535353',
 			'500': '#444444',
 			'600': '#353535',
 			'700': '#252525',
 			'800': '#161616',
 			'900': '#070707',
-			'A100': '#0085c3',
-			'A200': '#7ab800',
-			'A400': '#dc5034',
-			'A700': '#f2af00',
+			'A100': '#ffffff',
+			'A200': '#0085c3',
+			'A400': '#7ab800',
+			'A700': '#dc5034',
 			'contrastDefaultColor': 'light',
-			'contrastDarkColors': '50 100'
+			'contrastDarkColors': '50 100 200 A100'
 		});
 
 		$mdThemingProvider.theme('dell-branding')
@@ -235,8 +235,8 @@ class DellTheme {
 			.backgroundPalette('dell-background', {
 				'default': '50',
 				'hue-1': '100',
-				'hue-2': 'A100',
-				'hue-3': 'A400'
+				'hue-2': 'A200',
+				'hue-3': 'A700'
 			});
 
 		$mdThemingProvider.setDefaultTheme('dell-branding');

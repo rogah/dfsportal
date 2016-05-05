@@ -1,0 +1,34 @@
+.account {
+  .avatar {
+    background-color: #aaaaaa;
+    border-radius: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: .8rem;
+    margin-right: 1rem;
+    &.dpa {
+      background-color: #0085c3;
+    }
+    &.dbc {
+      background-color: #aaaaaa;
+    }
+    &.lease {
+      background-color: #f2af00;
+    }
+    &.loan {
+      background-color: #b7295a;
+    }
+  }
+  &.past-due {
+    color: #dc5034;
+    .avatar {
+      background-color: #dc5034;
+    }
+    md-icon {
+      color: #dc5034;
+    }
+  }
+}

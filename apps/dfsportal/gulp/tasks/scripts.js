@@ -3,16 +3,15 @@
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-const gutil = require('gulp-util');
+const runSequence = require('run-sequence');
 
 const gulp = require('gulp');
+const gutil = require('gulp-util');
 const eslint = require('gulp-eslint');
 const jsbeautifier = require('gulp-jsbeautifier');
 const sourcemaps = require('gulp-sourcemaps');
 const ngAnnotate = require('gulp-ng-annotate');
 const uglify = require('gulp-uglify');
-
-const runSequence = require('run-sequence');
 
 const paths = require('../paths');
 

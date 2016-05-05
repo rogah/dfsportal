@@ -1,0 +1,12 @@
+#accounts-list {
+  .md-caption {
+    color: #afafaf;
+  }
+  .dfs-accounts-more {
+    padding: 0;
+  }
+  md-item span {
+    @include ellipsis;
+    width: 100%;
+  }
+}

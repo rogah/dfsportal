@@ -18,62 +18,64 @@
 	<link rel="stylesheet" href="{!URLFOR($Resource.DellFinancialServices, '/styles/app.min.css')}"></link>
 </head>
 <body ng-cloak="true" layout="column" ng-controller="AppController as app">
+
     <div flex="true" layout="row">
-        <md-sidenav id="dfs-left-sidebar" 
-        	md-component-id="left-sidebar" 
+        <md-sidenav id="dfs-left-sidenav" 
+        	md-component-id="left-sidenav" 
         	md-is-locked-open="app.isMedia('gt-xs')" 
-        	ng-class="{'dfs-sidebar-sm': app.isMedia('sm') && app.isSidenavClosed('left-sidebar')}"
+        	ng-class="{'dfs-sidenav-sm': app.isMedia('sm') && app.isSidenavClosed('left-sidenav')}"
         	class="md-hue-2 md-whiteframe-z2">
 			<md-toolbar>
-				<div class="md-toolbar-tools dfs-sidebar-header">
+				<div class="md-toolbar-tools dfs-sidenav-header">
 					<h1 layout="row">
 						<span class="dfs-icon-dell"></span>
 						Financial Services
 					</h1>
 				</div>
 			</md-toolbar>
-			<div layout-padding="true" class="dfs-sidebar-userinfo">
+			<div layout-padding="true" class="dfs-sidenav-userinfo">
 				<div layout="column">
-					<h2 class="md-title dfs-userinitials sidebar-sm">PH</h2>
-					<h2 class="md-title sidebar-gt-sm">Patrick Hanks</h2>
-					<span class="md-caption sidebar-gt-sm">patrick_hanks@dell.com</span>
+					<h2 class="md-title dfs-userinitials sidenav-sm">PH</h2>
+					<h2 class="md-title sidenav-gt-sm">Patrick Hanks</h2>
+					<span class="md-caption sidenav-gt-sm">patrick_hanks@dell.com</span>
 				</div>
 			</div>
-			<div class="dfs-sidebar-nav">
+			<div class="dfs-sidenav-nav">
 				<md-list flex="true" role="list">
-					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+					<md-list-item class="md-accent md-1-line" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">account_circle</i>
-						<span class="sidebar-gt-sm">
+						<span flex="true" class="sidenav-gt-sm">
 							My Profile
 						</span>
 					</md-list-item>
-					<md-list-item class="md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
+					<md-list-item class="md-hue-2 md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">style</i>
-						<span class="sidebar-gt-sm">
+						<span class="sidenav-gt-sm">
 							Accounts
 						</span>
 					</md-list-item>
-					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
+					<md-list-item class="md-hue-1 md-1-line" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">lock</i>
-						<span class="sidebar-gt-sm">
+						<span class="sidenav-gt-sm">
 							Security
 						</span>
 					</md-list-item>
 					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">restore</i>
-						<span class="sidebar-gt-sm">
+						<span class="sidenav-gt-sm">
 							Alerts
 						</span>
 					</md-list-item>
 					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">settings</i>
-						<span class="sidebar-gt-sm">
+						<span class="sidenav-gt-sm">
 							Settings
 						</span>
 					</md-list-item>
+					<md-divider></md-divider>
 					<md-list-item id="signout" class="md-1-line" md-ink-ripple="true" ng-href="{!$Site.Prefix}/secur/logout.jsp">
 						<i class="material-icons">exit_to_app</i>
-						<span class="sidebar-gt-sm">
+						<span class="sidenav-gt-sm">
 							Sign Out
 						</span>
 					</md-list-item>
@@ -83,19 +85,89 @@
 
         <md-content flex="true" layout="column" id="dfs-container">
 			<md-toolbar id="dfs-toolbar" class="md-hue-1 md-whiteframe-1dp">
-				<div class="md-toolbar-tools md-toolbar-tools-bottom">
+				<div class="md-toolbar-tools" layout="row">
 					<md-button id="menu-toggle" 
 						class="md-icon-button md-primary" 
 						hide-gt-sm="true" 
-						ng-click="app.toggleSidenav('left-sidebar')">
+						ng-click="app.toggleSidenav('left-sidenav')">
 						<i class="material-icons">menu</i>
 					</md-button>
-					<h3>Accounts</h3>
+					<h3 class="md-headline">Accounts</h3>
+					<span flex="true"></span>
+					<md-button id="add-account" class="md-fab md-accent" aria-label="Add Account">
+						<md-tooltip md-direction="left">Add Account</md-tooltip>
+						<md-icon md-font-icon="material-icons">add</md-icon>
+					</md-button>
 				</div>
 			</md-toolbar>
-			<md-content id="dfs-content" flex="true" layout-padding="true" class="md-hue-1">
-				{!$User.Username}
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet placerat augue ut porttitor. Suspendisse pellentesque scelerisque odio, non euismod mi consequat et. Integer magna orci, semper a tincidunt fermentum, varius sed libero. In et ultrices leo. Cras rhoncus, mauris ut posuere vehicula, libero mauris commodo augue, et ullamcorper lorem erat quis elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas volutpat libero sit amet dignissim porttitor. Praesent quis nulla sollicitudin, vestibulum felis ac, consequat nisi. Sed sit amet auctor eros. Proin dapibus quam lorem, at congue nisl ultricies id. Maecenas id dui interdum, cursus eros at, pretium ligula. Curabitur at purus eros. Morbi lacinia elit et tortor convallis imperdiet. Nam aliquam pretium diam eget gravida.</p>
+
+			<md-content id="dfs-content" flex="true" layout="row" layout-align="center start" layout-padding="true" class="md-hue-1">
+				<md-list id="accounts-list" flex="true" flex-gt-md="80">
+				 	<md-card layout-padding="true" class="account" ng-class="{'past-due': account.status === 'Past Due'}" ng-repeat="account in app.accounts">
+				 		<md-item layout="row">
+				 			<div class="avatar">
+				 				<md-tooltip>{{account.description}}</md-tooltip>
+				 				{{account.type}}
+				 			</div>
+				 			<div flex="30" layout="column" layout-align="center start">
+								<span class="md-caption">Account Name</span>
+								<strong>{{account.name}}</strong>
+							</div>
+							<div flex="true" layout="column" layout-align="center start">
+								<span class="md-caption">Status</span>
+								<span>{{account.status}}</span>
+							</div>
+							<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-xs="true">
+								<span class="md-caption">Current Balance</span>
+								<span>{{account.currentBalance}}</span>
+							</div>
+							<div flex="true" layout="column" layout-align="center end">
+								<span class="md-caption">Payment Due</span>
+								<span>{{account.paymentDueAmount}}</span>
+							</div>
+							<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-sm="true">
+								<span class="md-caption">Due Date</span>
+								<span>{{account.paymentDueDate}}</span>
+							</div>
+							<div flex="nogrow" layout="row" layout-align="end center" >
+								<md-button class="md-icon-button" aria-label="Payment">
+									<md-tooltip>Make Payment</md-tooltip>
+									<md-icon md-font-icon="material-icons">payment</md-icon>
+								</md-button>
+								<md-button class="md-icon-button" aria-label="Statements" hide="true" show-gt-sm="true">
+									<md-tooltip>View Statement</md-tooltip>
+									<md-icon md-font-icon="material-icons">library_books</md-icon>
+								</md-button>
+								<md-menu class="dfs-accounts-more">
+									<md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)">
+										<md-tooltip>More...</md-tooltip>
+										<md-icon md-font-icon="material-icons">more_vert</md-icon>
+									</md-button>
+									<md-menu-content width="2">
+										<md-menu-item hide="true" show-sm="true">
+											<md-button>
+												<md-icon md-font-icon="material-icons">delete</md-icon>
+												View Statements
+											</md-button>
+										</md-menu-item>
+										<md-menu-item>
+											<md-button>
+												<md-icon md-font-icon="material-icons">delete</md-icon>
+												Remove Account
+											</md-button>
+										</md-menu-item>
+										<md-menu-item>
+											<md-button>
+												<md-icon md-font-icon="material-icons">mode_edit</md-icon>
+												Edit Account
+											</md-button>
+										</md-menu-item>
+									</md-menu-content>
+								</md-menu>
+							</div>
+				 		</md-item>
+				 	</md-card>
+				</md-list>
 			</md-content>
         </md-content>
     </div>
