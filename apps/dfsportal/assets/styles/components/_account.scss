@@ -1,34 +1,22 @@
 .account {
   .avatar {
-    background-color: #aaaaaa;
+    background-color: $dell-gray;
     border-radius: 50px;
-    min-width: 50px;
-    min-height: 50px;
-    line-height: 50px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
-    color: #fff;
+    color: $white;
     font-size: .8rem;
     margin-right: 1rem;
-    &.dpa {
-      background-color: #0085c3;
-    }
-    &.dbc {
-      background-color: #aaaaaa;
-    }
-    &.lease {
-      background-color: #f2af00;
-    }
-    &.loan {
-      background-color: #b7295a;
-    }
   }
   &.past-due {
-    color: #dc5034;
+    color: $dell-red;
     .avatar {
-      background-color: #dc5034;
+      background-color: $dell-red;
     }
     md-icon {
-      color: #dc5034;
+      color: $dell-red;
     }
   }
 }

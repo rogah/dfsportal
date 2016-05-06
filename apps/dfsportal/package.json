@@ -4,6 +4,7 @@
   "description": "Dell Financial Services Portal (Transactional)",
   "main": "index.js",
   "scripts": {
+    "deploy": "gulp deploy",
     "scripts": "gulp js:lint && gulp js:beautify",
     "e2e:update": "webdriver-manager update",
     "e2e:start": "webdriver-manager start",

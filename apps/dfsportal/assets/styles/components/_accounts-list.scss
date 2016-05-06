@@ -1,6 +1,6 @@
 #accounts-list {
   .md-caption {
-    color: #afafaf;
+    color: $dell-gray;
   }
   .dfs-accounts-more {
     padding: 0;
@@ -8,5 +8,9 @@
   md-item span {
     @include ellipsis;
     width: 100%;
+  }
+  .account {
+    margin-top: 1px;
+    margin-bottom: 0;
   }
 }

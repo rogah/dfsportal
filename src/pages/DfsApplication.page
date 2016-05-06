@@ -109,11 +109,11 @@
 				 				<md-tooltip>{{account.description}}</md-tooltip>
 				 				{{account.type}}
 				 			</div>
-				 			<div flex="30" layout="column" layout-align="center start">
+				 			<div flex="true" flex-gt-xs="30" layout="column" layout-align="center start">
 								<span class="md-caption">Account Name</span>
 								<strong>{{account.name}}</strong>
 							</div>
-							<div flex="true" layout="column" layout-align="center start">
+							<div flex="true" layout="column" layout-align="center start" hide="true" show-gt-xs="true">
 								<span class="md-caption">Status</span>
 								<span>{{account.status}}</span>
 							</div>
@@ -121,7 +121,7 @@
 								<span class="md-caption">Current Balance</span>
 								<span>{{account.currentBalance}}</span>
 							</div>
-							<div flex="true" layout="column" layout-align="center end">
+							<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-sm="true">
 								<span class="md-caption">Payment Due</span>
 								<span>{{account.paymentDueAmount}}</span>
 							</div>
@@ -129,7 +129,7 @@
 								<span class="md-caption">Due Date</span>
 								<span>{{account.paymentDueDate}}</span>
 							</div>
-							<div flex="nogrow" layout="row" layout-align="end center" >
+							<div flex="nogrow" layout="row" layout-align="end center" hide="true" show-gt-xs="true">
 								<md-button class="md-icon-button" aria-label="Payment">
 									<md-tooltip>Make Payment</md-tooltip>
 									<md-icon md-font-icon="material-icons">payment</md-icon>
