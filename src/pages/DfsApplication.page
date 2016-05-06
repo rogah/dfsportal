@@ -131,7 +131,7 @@
 											<md-icon md-font-icon="material-icons">payment</md-icon>
 											Pay
 										</md-button>
-										<md-button aria-label="Schedule Payment" ng-click="$event.stopPropagation();">
+										<md-button aria-label="Schedule Payment" hide="true" show-gt-sm="true" ng-click="$event.stopPropagation();">
 											<md-icon md-font-icon="material-icons">update</md-icon>
 											Schedule Payment
 										</md-button>
@@ -139,11 +139,11 @@
 											<md-icon md-font-icon="material-icons">library_books</md-icon>
 											Statements
 										</md-button>
-										<md-button aria-label="View Activities" ng-click="$event.stopPropagation();">
+										<md-button aria-label="View Activities" hide="true" show-gt-sm="true" ng-click="$event.stopPropagation();">
 											<md-icon md-font-icon="material-icons">graphic_eq</md-icon>
 											Activities
 										</md-button>
-										<md-button aria-label="Remove Account" ng-click="$event.stopPropagation();">
+										<md-button aria-label="Remove Account" hide="true" show-gt-sm="true" ng-click="$event.stopPropagation();">
 											<md-icon md-font-icon="material-icons">delete</md-icon>
 											Remove
 										</md-button>
@@ -154,82 +154,82 @@
 					 			</md-card-actions>
 					 			<md-divider></md-divider>
 					 			<md-card-content layout="row" layout-wrap="true" layout-padding="true">
-					 				<div layout="column" flex="50">
+					 				<div layout="column" flex="100" flex-gt-sm="50">
 					 					<h4>Amounts Dues</h4>
-					 					<div layout="row" class="info-row">
-					 						<span flex="50" class="info-label">Minimum Paymant Due:</span>
-					 						<span flex="50" class="info-data">$15.01</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+					 						<label flex="none" flex-gt-sm="50">Minimum Paymant Due:</label>
+					 						<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">$15.01</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Payment Due Date:</span>
-						 					<span flex="50" class="info-data">April 02, 2016</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Payment Due Date:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">April 02, 2016</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
 					 						<span class="md-caption">*Includes Past Due Amount of $15.01</span>
 					 					</div>	
 					 				</div>
-					 				<div layout="column" flex="50">
+					 				<div layout="column" flex="100" flex-gt-sm="50">
 					 					<h4>Account Information</h4>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Acount Number:</span>
-						 					<span flex="50" class="info-data">**** **** **** ***5 303</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Acount Number:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">**** **** **** ***5 303</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Status:</span>
-						 					<span flex="50" class="info-data">Active</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Status:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">Active</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Total Credit Line:</span>
-						 					<span flex="50" class="info-data">$500.00</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Total Credit Line:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">$500.00</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Available Credit:</span>
-						 					<span flex="50" class="info-data">$484.85</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Available Credit:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">$484.85</span>
 					 					</div>
 					 				</div>
-					 				<div layout="column" flex="50">
+					 				<div layout="column" flex="100" flex-gt-sm="50">
 					 					<h4>Last Payment Information</h4>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Statement Balance:</span>
-						 					<span flex="50" class="info-data">$15.01</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Statement Balance:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">$15.01</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Statement Date:</span>
-						 					<span flex="50" class="info-data">March 02, 2016</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Statement Date:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">March 02, 2016</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Payment Amount:</span>
-						 					<span flex="50" class="info-data">$0.00</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<span flex="none" flex-gt-sm="50">Payment Amount:</span>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">$0.00</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Payment Received On:</span>
-						 					<span flex="50" class="info-data">April 02, 2016</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Payment Received On:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">April 02, 2016</span>
 					 					</div>
 					 				</div>
-					 				<div layout="column" flex="50">	
+					 				<div layout="column" flex="100" flex-gt-sm="50">	
 					 					<h4>Contact Information</h4>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Billing Address:</span>
-						 					<div flex="50" layout="column">
-						 						<span class="info-data">334 HAUPT</span>
-						 						<span class="info-data">KYLE, TX 78640</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="50">Billing Address:</label>
+						 					<div flex="none" flex-gt-sm="50" layout="column">
+						 						<span>334 HAUPT</span>
+						 						<span>KYLE, TX 78640</span>
 						 					</div>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Home Phone:</span>
-						 					<span flex="50" class="info-data">(512) 723-8451</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Home Phone:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">(512) 723-8451</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Work Phone:</span>
-						 					<span flex="50" class="info-data">(512) 728-5056</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Work Phone:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">(512) 728-5056</span>
 					 					</div>
-					 					<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Mobile Phone:</span>
-						 					<span flex="50" class="info-data">(512) 728-9999</span>
+					 					<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Mobile Phone:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">(512) 728-9999</span>
 					 					</div>
-						 				<div layout="row" class="info-row">
-						 					<span flex="50" class="info-label">Account Email:</span>
-						 					<span flex="50" class="info-data">patrick_hanks@dell.com</span>
+						 				<div layout="column" layout-gt-sm="row" class="info-row">
+						 					<label flex="none" flex-gt-sm="50">Account Email:</label>
+						 					<span flex="none" flex-gt-sm="50" layout="row" layout-align-gt-sm="end center">patrick_hanks@dell.com</span>
 					 					</div>
 					 				</div>
 					 			</md-card-content>

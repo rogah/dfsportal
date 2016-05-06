@@ -25,19 +25,16 @@
       margin: 10px 0;
     }
     .info-row {
-      margin: 2px;
+      margin: 4px;
     }
-    .info-label {
+    label {
       color: $dell-gray;
-    }
-    .info-data {
-      text-align: right;
     }
   }
 }
 
 #add-account {
   position: fixed;
-  right: 15px;
-  bottom: 10px;
+  right: 8px;
+  bottom: 8px;
 }
