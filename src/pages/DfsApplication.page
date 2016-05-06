@@ -13,7 +13,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1" />
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.7/angular-material.min.css"></link>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.css"></link>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 	<link rel="stylesheet" href="{!URLFOR($Resource.DellFinancialServices, '/styles/app.min.css')}"></link>
 </head>
@@ -42,19 +42,19 @@
 			</div>
 			<div class="dfs-sidenav-nav">
 				<md-list flex="true" role="list">
-					<md-list-item class="md-accent md-1-line" md-ink-ripple="true" ng-click="null">
+					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">account_circle</i>
 						<span flex="true" class="sidenav-gt-sm">
 							My Profile
 						</span>
 					</md-list-item>
-					<md-list-item class="md-hue-2 md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
+					<md-list-item class="md-1-line" md-highlight="true" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">style</i>
 						<span class="sidenav-gt-sm">
 							Accounts
 						</span>
 					</md-list-item>
-					<md-list-item class="md-hue-1 md-1-line" md-ink-ripple="true" ng-click="null">
+					<md-list-item class="md-1-line" md-ink-ripple="true" ng-click="null">
 						<i class="material-icons">lock</i>
 						<span class="sidenav-gt-sm">
 							Security
@@ -94,80 +94,95 @@
 					</md-button>
 					<h3 class="md-headline">Accounts</h3>
 					<span flex="true"></span>
+					<md-menu>
+						<md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)">
+							<md-icon md-font-icon="material-icons">more_vert</md-icon>
+						</md-button>
+						<md-menu-content width="2">
+							<md-menu-item>
+								<md-button>
+									<md-icon md-font-icon="material-icons">add_box</md-icon>
+									Add Account
+								</md-button>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
+				</div>
+			</md-toolbar>
+
+			<md-content id="dfs-content" layout="column" layout-padding="true" flex="true" class="md-hue-1">
+				<div id="accounts-list-container" layout="row" layout-align="center start" flex="true">
+					<md-list id="accounts-list" flex="true" flex-gt-md="80">
+					 	<md-card layout-padding="true" class="account" ng-class="{'past-due': account.status === 'Past Due'}" ng-repeat="account in app.accounts">
+					 		<md-item layout="row">
+					 			<div class="avatar">
+					 				<md-tooltip>{{account.description}}</md-tooltip>
+					 				{{account.type}}
+					 			</div>
+					 			<div flex="true" flex-gt-xs="30" layout="column" layout-align="center start">
+									<span class="md-caption">Account Name</span>
+									<strong>{{account.name}}</strong>
+								</div>
+								<div flex="true" layout="column" layout-align="center start" hide="true" show-gt-xs="true">
+									<span class="md-caption">Status</span>
+									<span>{{account.status}}</span>
+								</div>
+								<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-xs="true">
+									<span class="md-caption">Current Balance</span>
+									<span>{{account.currentBalance}}</span>
+								</div>
+								<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-sm="true">
+									<span class="md-caption">Payment Due</span>
+									<span>{{account.paymentDueAmount}}</span>
+								</div>
+								<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-sm="true">
+									<span class="md-caption">Due Date</span>
+									<span>{{account.paymentDueDate}}</span>
+								</div>
+								<div flex="nogrow" layout="row" layout-align="end center" hide="true" show-gt-xs="true">
+									<md-button class="md-icon-button" aria-label="Payment">
+										<md-tooltip>Make Payment</md-tooltip>
+										<md-icon md-font-icon="material-icons">payment</md-icon>
+									</md-button>
+									<md-button class="md-icon-button" aria-label="Statements" hide="true" show-gt-sm="true">
+										<md-tooltip>View Statement</md-tooltip>
+										<md-icon md-font-icon="material-icons">library_books</md-icon>
+									</md-button>
+									<md-menu class="dfs-accounts-more">
+										<md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)">
+											<md-icon md-font-icon="material-icons">more_vert</md-icon>
+										</md-button>
+										<md-menu-content width="2">
+											<md-menu-item hide="true" show-sm="true">
+												<md-button>
+													<md-icon md-font-icon="material-icons">delete</md-icon>
+													View Statements
+												</md-button>
+											</md-menu-item>
+											<md-menu-item>
+												<md-button>
+													<md-icon md-font-icon="material-icons">delete</md-icon>
+													Remove Account
+												</md-button>
+											</md-menu-item>
+											<md-menu-item>
+												<md-button>
+													<md-icon md-font-icon="material-icons">mode_edit</md-icon>
+													Edit Account
+												</md-button>
+											</md-menu-item>
+										</md-menu-content>
+									</md-menu>
+								</div>
+					 		</md-item>
+					 	</md-card>
+					</md-list>
+
 					<md-button id="add-account" class="md-fab md-accent" aria-label="Add Account">
 						<md-tooltip md-direction="left">Add Account</md-tooltip>
 						<md-icon md-font-icon="material-icons">add</md-icon>
 					</md-button>
 				</div>
-			</md-toolbar>
-
-			<md-content id="dfs-content" flex="true" layout="row" layout-align="center start" layout-padding="true" class="md-hue-1">
-				<md-list id="accounts-list" flex="true" flex-gt-md="80">
-				 	<md-card layout-padding="true" class="account" ng-class="{'past-due': account.status === 'Past Due'}" ng-repeat="account in app.accounts">
-				 		<md-item layout="row">
-				 			<div class="avatar">
-				 				<md-tooltip>{{account.description}}</md-tooltip>
-				 				{{account.type}}
-				 			</div>
-				 			<div flex="true" flex-gt-xs="30" layout="column" layout-align="center start">
-								<span class="md-caption">Account Name</span>
-								<strong>{{account.name}}</strong>
-							</div>
-							<div flex="true" layout="column" layout-align="center start" hide="true" show-gt-xs="true">
-								<span class="md-caption">Status</span>
-								<span>{{account.status}}</span>
-							</div>
-							<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-xs="true">
-								<span class="md-caption">Current Balance</span>
-								<span>{{account.currentBalance}}</span>
-							</div>
-							<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-sm="true">
-								<span class="md-caption">Payment Due</span>
-								<span>{{account.paymentDueAmount}}</span>
-							</div>
-							<div flex="true" layout="column" layout-align="center end" hide="true" show-gt-sm="true">
-								<span class="md-caption">Due Date</span>
-								<span>{{account.paymentDueDate}}</span>
-							</div>
-							<div flex="nogrow" layout="row" layout-align="end center" hide="true" show-gt-xs="true">
-								<md-button class="md-icon-button" aria-label="Payment">
-									<md-tooltip>Make Payment</md-tooltip>
-									<md-icon md-font-icon="material-icons">payment</md-icon>
-								</md-button>
-								<md-button class="md-icon-button" aria-label="Statements" hide="true" show-gt-sm="true">
-									<md-tooltip>View Statement</md-tooltip>
-									<md-icon md-font-icon="material-icons">library_books</md-icon>
-								</md-button>
-								<md-menu class="dfs-accounts-more">
-									<md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)">
-										<md-tooltip>More...</md-tooltip>
-										<md-icon md-font-icon="material-icons">more_vert</md-icon>
-									</md-button>
-									<md-menu-content width="2">
-										<md-menu-item hide="true" show-sm="true">
-											<md-button>
-												<md-icon md-font-icon="material-icons">delete</md-icon>
-												View Statements
-											</md-button>
-										</md-menu-item>
-										<md-menu-item>
-											<md-button>
-												<md-icon md-font-icon="material-icons">delete</md-icon>
-												Remove Account
-											</md-button>
-										</md-menu-item>
-										<md-menu-item>
-											<md-button>
-												<md-icon md-font-icon="material-icons">mode_edit</md-icon>
-												Edit Account
-											</md-button>
-										</md-menu-item>
-									</md-menu-content>
-								</md-menu>
-							</div>
-				 		</md-item>
-				 	</md-card>
-				</md-list>
 			</md-content>
         </md-content>
     </div>
@@ -175,7 +190,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.7/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.js"></script>
 
 	<script src="{!URLFOR($Resource.DellFinancialServices, '/app.min.js')}"></script>
 	

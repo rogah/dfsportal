@@ -4,10 +4,11 @@
 		<members>DfsApplicationController</members>
 		<members>DfsSignInController</members>
 		<members>DfsUrlRewriter</members>
-        <name>ApexClass</name>
+		<name>ApexClass</name>
 	</types>
 	<types>
 		<members>DfsApplication</members>
+		<members>DfsKitchenSink</members>
 		<members>DfsSignIn</members>
 		<name>ApexPage</name>
 	</types>
