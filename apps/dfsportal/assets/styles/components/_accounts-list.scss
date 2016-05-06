@@ -10,8 +10,29 @@
     width: 100%;
   }
   .account {
+    outline: none;
     margin-top: 1px;
     margin-bottom: 0;
+    cursor: pointer;
+    &.selected {
+      margin: 20px -10px;
+    }
+    md-card-actions {
+      background-color: $background;
+      margin: 0;
+    }
+    h4 {
+      margin: 10px 0;
+    }
+    .info-row {
+      margin: 2px;
+    }
+    .info-label {
+      color: $dell-gray;
+    }
+    .info-data {
+      text-align: right;
+    }
   }
 }
 

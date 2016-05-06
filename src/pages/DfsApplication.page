@@ -111,10 +111,131 @@
 			</md-toolbar>
 
 			<md-content id="dfs-content" layout="column" layout-padding="true" flex="true" class="md-hue-1">
-				<div id="accounts-list-container" layout="row" layout-align="center start" flex="true">
+				<div id="accounts-list-container" layout="row" layout-align="center start">
 					<md-list id="accounts-list" flex="true" flex-gt-md="80">
-					 	<md-card layout-padding="true" class="account" ng-class="{'past-due': account.status === 'Past Due'}" ng-repeat="account in app.accounts">
-					 		<md-item layout="row">
+					 	<md-card layout-padding="true" class="account" ng-class="{selected: account.selected}" ng-repeat="account in app.accounts" ng-click="account.selected = !account.selected">
+					 		<md-item layout="column" ng-if="account.selected">
+					 			<md-card-title layout="row" layout-align="start center" ng-class="{'past-due': account.status === 'Past Due'}">
+					 				<div class="avatar">
+						 				<md-tooltip>{{account.description}}</md-tooltip>
+						 				{{account.type}}
+						 			</div>
+						 			<md-card-title-text flex="true">
+										<strong>{{account.name}}</strong>
+									</md-card-title-text>
+					 			</md-card-title>
+					 			<md-divider></md-divider>
+					 			<md-card-actions layout="row" ng-class="{'past-due': account.status === 'Past Due'}">
+					 				<div flex="true" layout="row" layout-align="center center">
+					 					<md-button aria-label="Make Payment" ng-click="$event.stopPropagation();">
+											<md-icon md-font-icon="material-icons">payment</md-icon>
+											Pay
+										</md-button>
+										<md-button aria-label="Schedule Payment" ng-click="$event.stopPropagation();">
+											<md-icon md-font-icon="material-icons">update</md-icon>
+											Schedule Payment
+										</md-button>
+										<md-button aria-label="View Statements" ng-click="$event.stopPropagation();">
+											<md-icon md-font-icon="material-icons">library_books</md-icon>
+											Statements
+										</md-button>
+										<md-button aria-label="View Activities" ng-click="$event.stopPropagation();">
+											<md-icon md-font-icon="material-icons">graphic_eq</md-icon>
+											Activities
+										</md-button>
+										<md-button aria-label="Remove Account" ng-click="$event.stopPropagation();">
+											<md-icon md-font-icon="material-icons">delete</md-icon>
+											Remove
+										</md-button>
+					 				</div>
+					 				<md-button class="md-icon-button" aria-label="More" ng-click="$event.stopPropagation();">
+										<md-icon md-font-icon="material-icons">more_vert</md-icon>
+									</md-button>
+					 			</md-card-actions>
+					 			<md-divider></md-divider>
+					 			<md-card-content layout="row" layout-wrap="true" layout-padding="true">
+					 				<div layout="column" flex="50">
+					 					<h4>Amounts Dues</h4>
+					 					<div layout="row" class="info-row">
+					 						<span flex="50" class="info-label">Minimum Paymant Due:</span>
+					 						<span flex="50" class="info-data">$15.01</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Payment Due Date:</span>
+						 					<span flex="50" class="info-data">April 02, 2016</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+					 						<span class="md-caption">*Includes Past Due Amount of $15.01</span>
+					 					</div>	
+					 				</div>
+					 				<div layout="column" flex="50">
+					 					<h4>Account Information</h4>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Acount Number:</span>
+						 					<span flex="50" class="info-data">**** **** **** ***5 303</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Status:</span>
+						 					<span flex="50" class="info-data">Active</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Total Credit Line:</span>
+						 					<span flex="50" class="info-data">$500.00</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Available Credit:</span>
+						 					<span flex="50" class="info-data">$484.85</span>
+					 					</div>
+					 				</div>
+					 				<div layout="column" flex="50">
+					 					<h4>Last Payment Information</h4>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Statement Balance:</span>
+						 					<span flex="50" class="info-data">$15.01</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Statement Date:</span>
+						 					<span flex="50" class="info-data">March 02, 2016</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Payment Amount:</span>
+						 					<span flex="50" class="info-data">$0.00</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Payment Received On:</span>
+						 					<span flex="50" class="info-data">April 02, 2016</span>
+					 					</div>
+					 				</div>
+					 				<div layout="column" flex="50">	
+					 					<h4>Contact Information</h4>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Billing Address:</span>
+						 					<div flex="50" layout="column">
+						 						<span class="info-data">334 HAUPT</span>
+						 						<span class="info-data">KYLE, TX 78640</span>
+						 					</div>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Home Phone:</span>
+						 					<span flex="50" class="info-data">(512) 723-8451</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Work Phone:</span>
+						 					<span flex="50" class="info-data">(512) 728-5056</span>
+					 					</div>
+					 					<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Mobile Phone:</span>
+						 					<span flex="50" class="info-data">(512) 728-9999</span>
+					 					</div>
+						 				<div layout="row" class="info-row">
+						 					<span flex="50" class="info-label">Account Email:</span>
+						 					<span flex="50" class="info-data">patrick_hanks@dell.com</span>
+					 					</div>
+					 				</div>
+					 			</md-card-content>
+					 		</md-item>
+
+					 		<md-item layout="row" ng-class="{'past-due': account.status === 'Past Due'}" ng-if="!account.selected">
 					 			<div class="avatar">
 					 				<md-tooltip>{{account.description}}</md-tooltip>
 					 				{{account.type}}
@@ -140,11 +261,11 @@
 									<span>{{account.paymentDueDate}}</span>
 								</div>
 								<div flex="nogrow" layout="row" layout-align="end center" hide="true" show-gt-xs="true">
-									<md-button class="md-icon-button" aria-label="Payment">
+									<md-button class="md-icon-button" aria-label="Payment" ng-click="$event.stopPropagation();">
 										<md-tooltip>Make Payment</md-tooltip>
 										<md-icon md-font-icon="material-icons">payment</md-icon>
 									</md-button>
-									<md-button class="md-icon-button" aria-label="Statements" hide="true" show-gt-sm="true">
+									<md-button class="md-icon-button" aria-label="Statements" hide="true" show-gt-sm="true" ng-click="$event.stopPropagation();">
 										<md-tooltip>View Statement</md-tooltip>
 										<md-icon md-font-icon="material-icons">library_books</md-icon>
 									</md-button>
@@ -181,7 +302,7 @@
 					<md-button id="add-account" class="md-fab md-accent" aria-label="Add Account">
 						<md-tooltip md-direction="left">Add Account</md-tooltip>
 						<md-icon md-font-icon="material-icons">add</md-icon>
-					</md-button>
+					</md-button>		
 				</div>
 			</md-content>
         </md-content>

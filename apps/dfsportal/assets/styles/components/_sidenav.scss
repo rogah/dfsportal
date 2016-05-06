@@ -48,10 +48,14 @@ a.md-button.md-dell-branding-theme:not([disabled]):hover,
   md-toolbar {
     font-size: inherit;
   }
+  h1,
+  h2 {
+    color: $white;
+    font-size: 1rem;
+  }
   h1 {
     @include no-wrap;
     position: relative;
-    font-size: 1rem;
     line-height: 2.6rem;
     padding-left: 3rem;
     .dfs-icon-dell {
@@ -62,7 +66,6 @@ a.md-button.md-dell-branding-theme:not([disabled]):hover,
     }
   }
   h2 {
-    font-size: 1rem;
     margin-top: 0;
     margin-bottom: 0;
   }
