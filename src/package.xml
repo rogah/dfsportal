@@ -7,6 +7,9 @@
 		<name>ApexClass</name>
 	</types>
 	<types>
+		<members>DfsAccounts</members>
+		<members>DfsAccountsList</members>
+		<members>DfsAccountsTmpl</members>
 		<members>DfsApplication</members>
 		<members>DfsKitchenSink</members>
 		<members>DfsSignIn</members>

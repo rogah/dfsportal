@@ -11,21 +11,21 @@
   }
   .account {
     outline: none;
+    cursor: pointer;
     margin-top: 1px;
     margin-bottom: 0;
-    cursor: pointer;
     &.selected {
-      margin: 20px -10px;
+      margin: 20px -4px;
     }
     md-card-actions {
       background-color: $background;
       margin: 0;
     }
+    .account-info > div {
+      margin: 4px;
+    }
     h4 {
       margin: 10px 0;
-    }
-    .info-row {
-      margin: 4px;
     }
     label {
       color: $dell-gray;
